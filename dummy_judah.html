@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Todo list</h1>
 
+    <div class="inputbox">
+<input id="input" type="text" placeholder="enter your tasks"> 
+<button  id="save" onclick="myfun()" > save</button>
+
+    </div>
+
+    <div id="list">
+
+        
+    </div>
+
+    <script>
+        
+            var inputt=document.getElementById("input")
+            var save=document.getElementById("save")
+            var list =document.getElementById("list")
+                   
+            function myfun(){
+                
+                var newEle=document.createElement("h3")
+                
+                if (inputt.value=="") {
+                    alert("fill something on the box")
+                    
+                }
+                else {
+                var del=document.createElement("BUTTON")
+                var x=document.createTextNode("delete")
+                del.style.fontSize="10px"
+                del.appendChild(x)
+                newEle.innerHTML=inputt.value;
+                list.append(newEle,del)
+               
+                del.addEventListener("click", ()=>{
+
+                    newEle.remove();
+                    del.remove();
+                })
+            }
+                
+            inputt.value="";
+                      
+
+            }
+
+            
+            
+        
+
+    </script>
+</body>
+</html>
